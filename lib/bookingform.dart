@@ -59,7 +59,7 @@ class _BookingFormState extends State<BookingForm> {
     var carId = await storage.read(key: "carId");
     var token = await storage.read(key: "token");
     var response = await http.post(Uri.parse(url + 'bookacar'), body:{"carId": carId, "address": address, "token": token,
-      "year": myDateTime.start.year.toString(), "month": myDateTime.start.month.toString(), "day": myDateTime.start.day.toString(), "difference": myDateTime.duration.inDays.toString()});
+      "year": myDateTime.start.year.toString(), "month": myDateTime.start.month.toString(), "day": myDateTime.start.day.toString(), "difference": myDateTime.duration.inDays.toString() , "ends": myDateTime.end.toUtc().millisecondsSinceEpoch.toString() });
 
     Map resMap = json.decode(response.body);
 

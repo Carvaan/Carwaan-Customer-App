@@ -50,8 +50,9 @@ class _MyBookingsState extends State<MyBookings> {
 
   
    getTile(booking) {
-    var car = booking["carDetails"];
-    if(car!= null){
+     var currentUnix =DateTime.now().toUtc().millisecondsSinceEpoch;
+     var car = booking["carDetails"];
+    if(car!= null && booking?["_doc"]?["status"]==true && booking?["_doc"]["ends"]>=currentUnix){
       return Padding(
         padding: const EdgeInsets.all(6.0),
         child: Card(

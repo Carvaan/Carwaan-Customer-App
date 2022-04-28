@@ -100,7 +100,7 @@ class _SearchCarState extends State<SearchCar> {
     setState(() {
       name = showroomName!;
     });
-    var response = await http.post(Uri.parse(url + 'getshowroomcars'), body:{"showRoomEmail":showroomEmail});
+    var response = await http.get(Uri.parse(url + 'getallcars'));
 
     Map resMap = json.decode(response.body);
 
@@ -131,7 +131,7 @@ class _SearchCarState extends State<SearchCar> {
     }
 
     cars.forEach((element) {
-      if(element["name"].toString().trim().toLowerCase().contains(text.toString().trim().toLowerCase())||
+      if(element["name"].toString().trim().toLowerCase().contains(text.toString().trim().toLowerCase()) ||
           element["specs"].toString().trim().toLowerCase().contains(text.toString().trim().toLowerCase())){
         searchCars.add(element);
       }

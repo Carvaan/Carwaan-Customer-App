@@ -5,6 +5,7 @@
 import 'dart:convert';
 import 'package:carwaan_customerapp/main.dart';
 import 'package:carwaan_customerapp/mybookings.dart';
+import 'package:carwaan_customerapp/searchAllCar.dart';
 import 'package:carwaan_customerapp/searchShowoom.dart';
 import 'package:carwaan_customerapp/showroomdetails.dart';
 import 'package:flutter/cupertino.dart';
@@ -146,7 +147,7 @@ class _HomePageState extends State<HomePage> {
             // Navigate to the Search Screen
             IconButton(
                 onPressed: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => SearchShowroom())),
+                    .push(MaterialPageRoute(builder: (_) => SearchCar())),
                 icon: Icon(Icons.search,color: Colors.black,))
           ],
         ),
